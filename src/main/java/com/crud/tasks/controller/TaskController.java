@@ -20,7 +20,7 @@ public class TaskController {
     private TaskMapper taskMapper;
 
     @RequestMapping(method = RequestMethod.POST, value = "createTask", consumes = APPLICATION_JSON_VALUE)
-    public void createTask(TaskDto taskDto) {
+    public void createTask(@RequestBody TaskDto taskDto) {
         service.saveTask(taskMapper.mapToTask(taskDto));
     }
 
@@ -40,7 +40,7 @@ public class TaskController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "deleteTask")
-    public void deleteTask(@PathVariable Long taskId) {
+    public void deleteTask(@RequestParam Long taskId) {
         service.deleteTask(taskId);
     }
 }

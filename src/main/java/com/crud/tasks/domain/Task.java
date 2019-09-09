@@ -13,11 +13,11 @@ import javax.persistence.*;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long taskId;
+    private Long id;
 
     @Column(name = "name")
-    private String taskTitle;
+    private String title;
 
     @Column(name = "description")
-    private String taskContent;
+    private String content;
 }
